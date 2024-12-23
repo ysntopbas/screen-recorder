@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+<head>
+    <title>Ekran Kaydedici</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Sol Panel -->
+        <div class="sidebar">
+            <div class="sources-panel">
+                <h3>Kaynaklar</h3>
+                <div class="source-controls">
+                    <button id="addWebcam" class="control-button">
+                        <span>📹</span> Webcam Ekle
+                    </button>
+                </div>
+                <div id="sourcesList" class="sources-list"></div>
+            </div>
+        </div>
+
+        <!-- Ana İçerik -->
+        <div class="content">
+            <!-- Üst Panel -->
+            <div class="top-bar">
+                <button class="theme-toggle" id="themeToggle">
+                    🌞 Tema Değiştir
+                </button>
+            </div>
+
+            <!-- Preview Alanı -->
+            <div class="preview-container">
+                <div class="preview-wrapper">
+                    <video id="preview" autoplay muted></video>
+                    <video id="webcamPreview" autoplay muted></video>
+                    
+                    <!-- Yeni elementler -->
+                    <div class="recording-indicator">
+                        <span class="record-dot"></span>
+                        RECORDING
+                    </div>
+                    
+                    <div class="timer">
+                        00:00:00
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alt Panel -->
+            <div class="bottom-panel">
+                <div class="settings-panel">
+                    <div class="quality-settings">
+                        <div class="setting-group">
+                            <label>Video Kalitesi:</label>
+                            <select id="videoQuality" class="setting-select">
+                                <option value="1920:1080">1080p</option>
+                                <option value="1280:720">720p</option>
+                                <option value="854:480">480p</option>
+                                <option value="640:360">360p</option>
+                            </select>
+                        </div>
+
+                        <div class="setting-group">
+                            <label>FPS:</label>
+                            <select id="fps" class="setting-select">
+                                <option value="60">60 FPS</option>
+                                <option value="30">30 FPS</option>
+                            </select>
+                        </div>
+
+                        <div class="setting-group">
+                            <label>Format:</label>
+                            <select id="videoFormat" class="setting-select">
+                                <option value="webm">WEBM</option>
+                                <option value="mp4">MP4</option>
+                                <option value="mkv">MKV</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="webcam-settings" style="display: none;">
+                        <div class="setting-group">
+                            <label>Webcam Boyutu:</label>
+                            <select id="webcamSize" class="setting-select">
+                                <option value="small" selected>Küçük</option>
+                                <option value="medium">Orta</option>
+                                <option value="large">Büyük</option>
+                            </select>
+                        </div>
+                        <div class="setting-group">
+                            <label>Konum:</label>
+                            <select id="webcamPosition" class="setting-select">
+                                <option value="bottom-right" selected>Sağ Alt</option>
+                                <option value="top-right">Sağ Üst</option>
+                                <option value="top-left">Sol Üst</option>
+                                <option value="bottom-left">Sol Alt</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button id="startBtn" class="control-button primary" disabled>
+                        <span>⏺</span> Kayıt Başlat
+                    </button>
+                    <button id="stopBtn" class="control-button danger" disabled>
+                        <span>⏹</span> Kayıt Durdur
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="renderer.js"></script>
+</body>
+</html> 
